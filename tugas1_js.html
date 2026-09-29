@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 1 - Javascript (Menghitung Luas)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            /* Membuat seluruh konten di dalam body menjadi ke tengah halaman */
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+        }
+        
+        h2 {
+            text-align: center; /* Membuat teks judul menjadi ke tengah */
+        }
+
+        .hasil {
+            background-color: #f4f4f9;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            width: 100%;
+            max-width: 400px;
+            /* Membuat teks di dalam kotak hasil menjadi ke tengah */
+            text-align: center; 
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.1); /* Tambahan sedikit bayangan agar lebih rapi */
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Tugas 1: Menghitung Luas Bangun Datar</h2>
+    <div class="hasil" id="tampilHasil">
+        <!-- Hasil perhitungan dari JavaScript akan muncul di sini -->
+    </div>
+
+    <script>
+        /* 
+           1. Fungsi untuk menghitung luas Persegi Panjang
+           Rumus: panjang x lebar
+           Menggunakan operator perkalian (*)
+        */
+        function hitungLuasPersegiPanjang(panjang, lebar) {
+            let luas = panjang * lebar;
+            return luas;
+        }
+
+        /* 
+           2. Fungsi untuk menghitung luas Bujur Sangkar (Persegi)
+           Rumus: sisi x sisi
+           Menggunakan operator perkalian (*)
+        */
+        function hitungLuasBujurSangkar(sisi) {
+            let luas = sisi * sisi;
+            return luas;
+        }
+
+        /* 
+           3. Fungsi untuk menghitung luas Segitiga
+           Rumus: 1/2 x alas x tinggi
+           Menggunakan operator perkalian (*)
+        */
+        function hitungLuasSegitiga(alas, tinggi) {
+            let luas = 0.5 * alas * tinggi;
+            return luas;
+        }
+
+        // --- DEKLARASI VARIABEL & NILAI BEBAS ---
+        // Nilai untuk Persegi Panjang
+        let nilaiPanjang = 10;
+        let nilaiLebar = 5;
+
+        // Nilai untuk Bujur Sangkar
+        let nilaiSisi = 8;
+
+        // Nilai untuk Segitiga
+        let nilaiAlas = 12;
+        let nilaiTinggi = 6;
+
+
+        // --- MEMANGGIL FUNGSI & MENYIMPAN HASIL ---
+        let hasilPersegiPanjang = hitungLuasPersegiPanjang(nilaiPanjang, nilaiLebar);
+        let hasilBujurSangkar = hitungLuasBujurSangkar(nilaiSisi);
+        let hasilSegitiga = hitungLuasSegitiga(nilaiAlas, nilaiTinggi);
+
+
+        // --- MENAMPILKAN HASIL KE DALAM HTML ---
+        let outputElemen = document.getElementById("tampilHasil");
+        
+        outputElemen.innerHTML = `
+            <p><strong>1. Luas Persegi Panjang</strong><br>
+            Panjang: ${nilaiPanjang}, Lebar: ${nilaiLebar} <br>
+            Hasil: <strong style="font-size: 18px; color: #2c3e50;">${hasilPersegiPanjang}</strong></p>
+
+            <p><strong>2. Luas Bujur Sangkar</strong><br>
+            Sisi: ${nilaiSisi} <br>
+            Hasil: <strong style="font-size: 18px; color: #2c3e50;">${hasilBujurSangkar}</strong></p>
+
+            <p><strong>3. Luas Segitiga</strong><br>
+            Alas: ${nilaiAlas}, Tinggi: ${nilaiTinggi} <br>
+            Hasil: <strong style="font-size: 18px; color: #2c3e50;">${hasilSegitiga}</strong></p>
+        `;
+        
+        // Kamu juga bisa melihat hasilnya di console browser (F12)
+        console.log("Luas Persegi Panjang: " + hasilPersegiPanjang);
+        console.log("Luas Bujur Sangkar: " + hasilBujurSangkar);
+        console.log("Luas Segitiga: " + hasilSegitiga);
+    </script>
+
+</body>
+</html>
